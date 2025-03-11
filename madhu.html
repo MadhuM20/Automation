@@ -1,0 +1,141 @@
+<!-- // src/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Besura - Musical App</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>🎼 Besura — Musical App</h1>
+  </header>
+
+  <main>
+    <section class="session-controls">
+      <input type="text" placeholder="Session Name" maxlength="30">
+      <div class="button-group">
+        <button>💾 Save</button>
+        <button>⚡ Save On</button>
+        <button>📁 Open</button>
+        <button class="main-switch">▶️ Main Switch</button>
+      </div>
+    </section>
+
+    <section class="shruti-bpm-controls">
+      <div class="control-group">
+        <label for="shruti-select">Shruti:</label>
+        <select id="shruti-select">
+          <option>C</option><option>C#</option><option>D</option><option>D#</option><option>E</option>
+          <option>F</option><option>F#</option><option>G</option><option>G#</option><option>A</option>
+          <option>A#</option><option>B</option>
+        </select>
+      </div>
+
+      <div class="control-group">
+        <label for="sa-frequency">Sa Frequency (Hz):</label>
+        <input type="text" id="sa-frequency" maxlength="10">
+      </div>
+
+      <div class="control-group">
+        <label for="bpm-slider">BPM:</label>
+        <input type="range" id="bpm-slider" min="60" max="120" value="80">
+        <span id="bpm-value">80 BPM</span>
+      </div>
+    </section>
+
+    <section class="controls">
+      <div class="control-group">
+        <label for="raag-select">Choose Raag:</label>
+        <select id="raag-select">
+          <option>Yaman</option>
+          <option>Bhairav</option>
+          <option>Bageshree</option>
+        </select>
+      </div>
+
+      <div class="control-group">
+        <label for="user-type">User Type:</label>
+        <select id="user-type">
+          <option>Male</option>
+          <option>Female</option>
+          <option>Child</option>
+        </select>
+      </div>
+
+      <div class="control-group">
+        <label for="base-sa">Base Sa Selection:</label>
+        <select id="base-sa">
+          <option>A3</option>
+          <option>C4</option>
+          <option>D4</option>
+        </select>
+      </div>
+
+      <div class="control-group">
+        <label for="pattern-select">Select an Alankar:</label>
+        <select id="pattern-select">
+          <option>Aroha & Avroha</option>
+          <option>SA RE GA - RE GA MA</option>
+          <option>SA RE GA MA RE GA MA PA</option>
+          <option>SA RE SA RE GA</option>
+          <option>Morning Riyaz</option>
+        </select>
+      </div>
+    </section>
+
+    <section class="action-buttons">
+      <button id="start-morning-riyaz">▶️ Start Full Morning Riyaz Routine</button>
+      <button id="generate-raag-vistar">🎼 Generate Raag Vistar</button>
+    </section>
+
+    <section class="instruments">
+      <img id="harmonium-btn" src="C:\Users\Hp\besura-app\assets\Harmonium.png" alt="Harmonium" class="instrument-image" onclick="toggleControls('harmonium-controls')">
+      <img id="tanpura-btn" src="C:\Users\Hp\besura-app\assets\Tanpura.png" alt="Tanpura" class="instrument-image" onclick="toggleControls('tanpura-controls')">
+      <img id="tabla-btn" src="C:\Users\Hp\besura-app\assets\Tabla.png" alt="Tabla" class="instrument-image" onclick="toggleControls('tabla-controls')">
+    </section>
+
+    <section id="harmonium-controls" class="instrument-controls" style="display: none;">
+      <h2>🎶 Harmonium Controls</h2>
+      <label>Choose Voice Type:</label>
+      <select>
+        <option>None</option>
+        <option>Omkar</option>
+        <option>Kan</option>
+        <option>Sa Re Ga Ma</option>
+      </select>
+      <button>▶️ Play/Stop</button>
+      <label>Volume:</label>
+      <input type="range" min="0" max="100" value="50">
+    </section>
+
+    <section id="tanpura-controls" class="instrument-controls" style="display: none;">
+      <h2>🎶 Tanpura Controls</h2>
+      <label>Strings of Sa:</label>
+      <select>
+        <option>F</option><option>F#</option><option>G</option>
+        <option>G#</option><option>A</option><option>A#</option><option>B</option>
+        <option>C</option><option>C#</option><option>D</option><option>D#</option><option>E</option>
+      </select>
+      <button>▶️ Play/Stop</button>
+      <label>Volume:</label>
+      <input type="range" min="0" max="100" value="50">
+    </section>
+
+    <section id="tabla-controls" class="instrument-controls" style="display: none;">
+      <h2>🪘 Tabla Controls</h2>
+      <label>Choose Taal:</label>
+      <select>
+        <option>Teentaal</option><option>Dadra</option><option>Rupak</option>
+        <option>Keherwa</option><option>Ektal</option>
+      </select>
+      <button>▶️ Play/Stop</button>
+      <label>Volume:</label>
+      <input type="range" min="0" max="100" value="50">
+    </section>
+  </main>
+
+  <script src="renderer.js"></script>
+</body>
+</html>
